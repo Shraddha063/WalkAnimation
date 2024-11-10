@@ -1,0 +1,40 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
+  
+  .character-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px; /* Keeps the characters at the center of the screen */
+  }
+  
+  /* Common character styles */
+  .character {
+    width: 100px; /* Frame width (FW) */
+    height: 170px; /* Frame height (same as image height) */
+    background-repeat: no-repeat;
+    animation: walk 1s steps(8) infinite; /* 'steps(5)' because 5 frames */
+    position: relative; /* Keeps the character in place */
+  }
+  
+
+ 
+  @keyframes walk {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -780px 0; /* Move left by total width minus one frame */
+    }
+  }
+  .character:hover {
+    animation: unset;
+}
